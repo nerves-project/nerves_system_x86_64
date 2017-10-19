@@ -2,18 +2,20 @@ defmodule NervesSystemX8664.Mixfile do
   use Mix.Project
 
   @version Path.join(__DIR__, "VERSION")
-    |> File.read!
-    |> String.trim
+           |> File.read!()
+           |> String.trim()
 
   def project do
-    [app: :nerves_system_x86_64,
-     version: @version,
-     elixir: "~> 1.4",
-     compilers: Mix.compilers ++ [:nerves_package],
-     description: description(),
-     package: package(),
-     deps: deps(),
-     aliases: ["deps.precompile": ["nerves.env", "deps.precompile"]]]
+    [
+      app: :nerves_system_x86_64,
+      version: @version,
+      elixir: "~> 1.4",
+      compilers: Mix.compilers() ++ [:nerves_package],
+      description: description(),
+      package: package(),
+      deps: deps(),
+      aliases: ["deps.precompile": ["nerves.env", "deps.precompile"]]
+    ]
   end
 
   def application do
@@ -35,11 +37,22 @@ defmodule NervesSystemX8664.Mixfile do
   end
 
   defp package do
-   [maintainers: ["Frank Hunleth"],
-     files: ["LICENSE", "mix.exs", "nerves_defconfig", "nerves.exs", "README.md",
-             "VERSION", "rootfs_overlay", "linux-4.13.defconfig", "grub.cfg",
-             "post-createfs.sh"],
-    licenses: ["Apache 2.0"],
-     links: %{"Github" => "https://github.com/fhunleth/nerves_system_x86_64"}]
+    [
+      maintainers: ["Frank Hunleth"],
+      files: [
+        "LICENSE",
+        "mix.exs",
+        "nerves_defconfig",
+        "nerves.exs",
+        "README.md",
+        "VERSION",
+        "rootfs_overlay",
+        "linux-4.13.defconfig",
+        "grub.cfg",
+        "post-createfs.sh"
+      ],
+      licenses: ["Apache 2.0"],
+      links: %{"Github" => "https://github.com/nerves-project/nerves_system_x86_64"}
+    ]
   end
 end
