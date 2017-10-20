@@ -25,4 +25,5 @@ help() {
 echo "Starting QEMU..."
 qemu-system-x86_64 \
     -drive file="$IMAGE",format=raw \
-    -net user,hostfwd=tcp::8989-:8989
+    -device e1000,netdev=user.0 \
+    -netdev user,id=user.0,hostfwd=tcp::8989-:8989
