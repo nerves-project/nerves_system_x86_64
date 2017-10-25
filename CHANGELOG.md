@@ -1,5 +1,10 @@
 # Changelog
 
+## v0.2.1
+
+  Updated dependencies
+  * [nerves_system_br v0.14.1](https://github.com/nerves-project/nerves_system_br/releases/tag/v0.14.1)
+
 ## v0.2.0
 
   Updated dependencies
