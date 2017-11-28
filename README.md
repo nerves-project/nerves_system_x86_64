@@ -1,5 +1,5 @@
 # Generic x86_64 System
-[![Build Status](https://travis-ci.org/nerves-project/nerves_system_x86_64.png?branch=master)](https://travis-ci.org/nerves-project/nerves_system_x86_64)
+[![CircleCI](https://circleci.com/gh/nerves-project/nerves_system_x86_64/tree/master.svg?style=svg)](https://circleci.com/gh/nerves-project/nerves_system_x86_64/tree/master)
 
 This is the base Nerves System configuration for a generic x86_64 system. 
 
