@@ -1,9 +1,17 @@
 # Changelog
 
+## v0.3.0
+
+  * Updated dependencies
+    * [nerves_system_br v0.15.0](https://github.com/nerves-project/nerves_system_br/releases/tag/v0.15.0)
+  * Enhancements
+    * erlinit added aliased /dev/rootdisk* for referencing the boot disk. See the readme for more info.
+    * Updated nerves to 0.8. Move nerves.exs into mix.exs
+
 ## v0.2.1
 
-  Updated dependencies
-  * [nerves_system_br v0.14.1](https://github.com/nerves-project/nerves_system_br/releases/tag/v0.14.1)
+  * Updated dependencies
+    * [nerves_system_br v0.14.1](https://github.com/nerves-project/nerves_system_br/releases/tag/v0.14.1) 
 
 ## v0.2.0
 
