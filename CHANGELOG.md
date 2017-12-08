@@ -1,6 +1,6 @@
 # Changelog
 
-## v0.3.2-dev
+## v0.3.2
 
   * Updated dependencies
     * [toolchain v0.12.1](https://github.com/nerves-project/toolchains/releases/tag/v0.12.1)
