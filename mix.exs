@@ -24,13 +24,11 @@ defmodule NervesSystemX8664.Mixfile do
     []
   end
   
-  defp nerves_package do
+  def nerves_package do
     [
       type:  :system,
-      version: @version,
-      compiler: :nerves_package,
       artifact_url: [
-        "https://github.com/nerves-project/#{@app}/releases/download/v#{@version}/#{@app}-v#{@version}.tar.gz",
+        "https://github.com/nerves-project/#{@app}/releases/download/v#{@version}/#{@app}-v#{@version}.tar.gz"
       ],
       platform: Nerves.System.BR,
       platform_config: [
@@ -43,8 +41,8 @@ defmodule NervesSystemX8664.Mixfile do
   defp deps do
     [
       {:nerves, "~> 0.8", runtime: false},
-      {:nerves_system_br, "~> 0.15.1", runtime: false, app: false},
-      {:nerves_toolchain_x86_64_unknown_linux_musl, "~> 0.12.1", runtime: false, app: false}
+      {:nerves_system_br, "~> 0.15.1", runtime: false},
+      {:nerves_toolchain_x86_64_unknown_linux_musl, "~> 0.12.1", runtime: false}
     ]
   end
 
@@ -71,6 +69,7 @@ defmodule NervesSystemX8664.Mixfile do
       "README.md",
       "VERSION",
       "rootfs_overlay",
+      "fwup.conf",
       "linux-4.13.defconfig",
       "grub.cfg",
       "post-createfs.sh"
