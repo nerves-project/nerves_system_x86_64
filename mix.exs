@@ -71,9 +71,11 @@ defmodule NervesSystemX8664.Mixfile do
       "VERSION",
       "rootfs_overlay",
       "fwup.conf",
-      "linux-4.13.defconfig",
+      "fwup-revert.conf",
+      "post-createfs.sh",
+      "post-build.sh",
       "grub.cfg",
-      "post-createfs.sh"
+      "linux-4.13.defconfig"
     ]
   end
 end
