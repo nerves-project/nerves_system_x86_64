@@ -1,12 +1,28 @@
 # Changelog
 
+## v0.4.0
+
+  Updated dependencies
+  * [nerves_system_br v0.16.1-2017-11](https://github.com/nerves-project/nerves_system_br/releases/tag/v0.16.1-2017-11)
+
+  * Enhancements
+    * Increased memory in qemu script to 1 GB. 128 MB works, but can cause some apps to
+      reboot with out of memory errors.
+    * Start running nerves_system_linter to check for configuration errors.
+    * Automount the boot partition readonly at `/boot`
+    * Support for reverting firmware.
+
+      See [Reverting Firmware](https://hexdocs.pm/nerves_runtime/readme.html#reverting-firmware) for more info on reverting firmware.
+
+      See [fwup-revert.conf](https://github.com/nerves-project/nerves_system_rpi/blob/master/fwup-revert.conf) for more information on how fwup handles reverting.
+
 ## v0.3.2
 
   * Updated dependencies
     * [toolchain v0.12.1](https://github.com/nerves-project/toolchains/releases/tag/v0.12.1)
 
 ## v0.3.1
- 
+
   * Updated dependencies
     * [nerves_system_br v0.15.1](https://github.com/nerves-project/nerves_system_br/releases/tag/v0.15.1)
 
@@ -21,7 +37,7 @@
 ## v0.2.1
 
   * Updated dependencies
-    * [nerves_system_br v0.14.1](https://github.com/nerves-project/nerves_system_br/releases/tag/v0.14.1) 
+    * [nerves_system_br v0.14.1](https://github.com/nerves-project/nerves_system_br/releases/tag/v0.14.1)
 
 ## v0.2.0
 
