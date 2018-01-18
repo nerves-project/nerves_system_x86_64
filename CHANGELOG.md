@@ -1,6 +1,13 @@
 # Changelog
 
-## v0.4.1-dev
+## v0.4.1
+
+  Updated dependencies
+  * [nerves_system_br v0.16.4](https://github.com/nerves-project/nerves_system_br/releases/tag/v0.16.4)
+
+  * Changes
+    * Temporarily disable the system linter since it fails and the fix requires
+      some time.
 
 ## v0.4.0
 
