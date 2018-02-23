@@ -1,7 +1,9 @@
 # Generic x86_64 System
-[![CircleCI](https://circleci.com/gh/nerves-project/nerves_system_x86_64/tree/master.svg?style=svg)](https://circleci.com/gh/nerves-project/nerves_system_x86_64/tree/master)
 
-This is the base Nerves System configuration for a generic x86_64 system. 
+[![CircleCI](https://circleci.com/gh/nerves-project/nerves_system_x86_64/tree/master.svg?style=svg)](https://circleci.com/gh/nerves-project/nerves_system_x86_64/tree/master)
+[![Hex version](https://img.shields.io/hexpm/v/nerves_system_x86_64.svg "Hex version")](https://hex.pm/packages/nerves_system_x86_64)
+
+This is the base Nerves System configuration for a generic x86_64 system.
 
 | Feature              | Description                     |
 | -------------------- | ------------------------------- |
@@ -16,16 +18,6 @@ This is the base Nerves System configuration for a generic x86_64 system.
 Please contact me about this if you're really interested in it. I don't
 maintain it, and unless you really dig through the code, it's not going
 to be obvious how it works. I'm happy to help if you're really interested.
-
-## Installation
-
-Add `nerves_system_x86_64` to your list of dependencies in mix.exs:
-
-```
-def deps do
-    [{:nerves_system_x86_64, "~> 0.1"}]
-end
-```
 
 ## Root disk naming
 

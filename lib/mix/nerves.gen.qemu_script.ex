@@ -38,23 +38,24 @@ defmodule Mix.Tasks.Nerves.Gen.QemuScript do
 
   def run([image_path | _argv]) do
     if File.exists?(@script_name) do
-      Mix.shell.yes?("Overwrite #{@script_name}?") || Mix.raise("Aborted")
+      Mix.shell().yes?("Overwrite #{@script_name}?") || Mix.raise("Aborted")
     end
 
-    source = :code.priv_dir(:nerves_system_x86_64)
-    |> to_string
-    |> Path.join(@script_name)
+    source =
+      :code.priv_dir(:nerves_system_x86_64)
+      |> to_string
+      |> Path.join(@script_name)
 
     bindings = [image_path: image_path]
     contents = EEx.eval_file(source, bindings, trim: true)
     File.write!(@script_name, contents)
     File.chmod!(@script_name, 0o755)
 
-    Mix.shell.info "Created #{@script_name}"
+    Mix.shell().info("Created #{@script_name}")
   end
 
   def run([]) do
-    otp_app = Mix.Project.config[:app]
+    otp_app = Mix.Project.config()[:app]
     image_path = "#{otp_app}.img"
     run([image_path])
   end
@@ -62,10 +63,10 @@ defmodule Mix.Tasks.Nerves.Gen.QemuScript do
   def run(_), do: error_image()
 
   defp error_image do
-    Mix.raise """
+    Mix.raise("""
       Unexpected arguments. Expecting to be run as follows:
 
       $ mix nerves.gen.qemu_script [path/to/app.img]
-    """
+    """)
   end
 end
