@@ -26,7 +26,7 @@ defmodule NervesSystemX8664.MixProject do
   end
 
   defp bootstrap(args) do
-    System.put_env("MIX_TARGET", "rpi")
+    System.put_env("MIX_TARGET", "x86_64")
     Application.start(:nerves_bootstrap)
     Mix.Task.run("loadconfig", args)
   end
