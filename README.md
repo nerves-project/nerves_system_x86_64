@@ -15,9 +15,26 @@ This is the base Nerves System configuration for a generic x86_64 system.
 | Hardware I/O         | None                            |
 | Ethernet             | Yes                             |
 
-Please contact me about this if you're really interested in it. I don't
-maintain it, and unless you really dig through the code, it's not going
-to be obvious how it works. I'm happy to help if you're really interested.
+Please contact us about this if you're really interested in it. We don't
+exercise it regularly except as a base for other x86_64 projects.
+
+## Using
+
+The most common way of using this Nerves System is create a project with `mix
+nerves.new` and to export `MIX_TARGET=x86_64`. See the [Getting started
+guide](https://hexdocs.pm/nerves/getting-started.html#creating-a-new-nerves-app)
+for more information.
+
+If you need custom modifications to this system for your device, clone this
+repository and update as described in [Making custom
+systems](https://hexdocs.pm/nerves/systems.html#customizing-your-own-nerves-system)
+
+If you're new to Nerves, check out the
+[nerves_init_gadget](https://github.com/nerves-project/nerves_init_gadget)
+project for creating a starter project. It will get you started with the basics
+like bringing up networking, initializing the writable application data
+partition, and enabling ssh-based firmware updates.  It's easiest to begin by
+using the wired Ethernet interface 'eth0' and DHCP.
 
 ## Root disk naming
 
