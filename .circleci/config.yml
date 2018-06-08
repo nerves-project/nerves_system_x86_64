@@ -43,14 +43,6 @@ install_ghr: &install_ghr
       tar xf ghr_v0.9.0_linux_amd64.tar.gz
       ln -sf ghr_v0.9.0_linux_amd64/ghr .
 
-sync_dl_cache: &sync_dl_cache
-  run: 
-    name: Sync downloads cache
-    command: |
-      set +e
-      aws s3 sync ~/.nerves/dl s3://nerves-project/dl
-      exit 0
-
 version: 2.0
 
 jobs:
@@ -74,8 +66,6 @@ jobs:
       - run:
           name: Lint
           command: mix nerves.system.lint nerves_defconfig
-      - <<: *install_aws_cli
-      - <<: *sync_dl_cache
       - run:
           name: Create artifact dir
           command: mkdir -p /nerves/deploy/system/artifacts
