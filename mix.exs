@@ -48,7 +48,7 @@ defmodule NervesSystemX8664.MixProject do
   defp deps do
     [
       {:nerves, "~> 1.0", runtime: false},
-      {:nerves_system_br, "1.4.1", runtime: false},
+      {:nerves_system_br, "1.4.2", runtime: false},
       {:nerves_toolchain_x86_64_unknown_linux_musl, "1.1.0", runtime: false},
       {:nerves_system_linter, "~> 0.3.0", runtime: false},
       {:ex_doc, "~> 0.18", only: :dev}
@@ -72,18 +72,22 @@ defmodule NervesSystemX8664.MixProject do
 
   defp package_files do
     [
+      "fwup_include",
+      "lib",
+      "priv",
+      "rootfs_overlay",
+      "CHANGELOG.md",
+      "fwup-revert.conf",
+      "fwup.conf",
+      "grub.cfg",
       "LICENSE",
+      "linux-4.13.defconfig",
       "mix.exs",
       "nerves_defconfig",
-      "README.md",
-      "VERSION",
-      "rootfs_overlay",
-      "fwup.conf",
-      "fwup-revert.conf",
-      "post-createfs.sh",
       "post-build.sh",
-      "grub.cfg",
-      "linux-4.13.defconfig"
+      "post-createfs.sh",
+      "README.md",
+      "VERSION"
     ]
   end
 end
