@@ -1,7 +1,7 @@
-defmodule NervesSystemX8664.MixProject do
+defmodule NervesSystemX8664UEFI.MixProject do
   use Mix.Project
 
-  @app :nerves_system_x86_64
+  @app :nerves_system_x86_64_uefi
   @version Path.join(__DIR__, "VERSION")
            |> File.read!()
            |> String.trim()
@@ -35,7 +35,7 @@ defmodule NervesSystemX8664.MixProject do
     [
       type: :system,
       artifact_sites: [
-        {:github_releases, "nerves-project/#{@app}"}
+        {:github_releases, "kbredemeier/#{@app}"}
       ],
       build_runner_opts: build_runner_opts(),
       platform: Nerves.System.BR,
@@ -58,16 +58,16 @@ defmodule NervesSystemX8664.MixProject do
 
   defp description do
     """
-    Nerves System - x86_64
+    Nerves System - x86_64_uefi
     """
   end
 
   defp package do
     [
-      maintainers: ["Frank Hunleth"],
+      maintainers: ["Kristopher Bredemeier"],
       files: package_files(),
       licenses: ["Apache 2.0"],
-      links: %{"Github" => "https://github.com/nerves-project/#{@app}"}
+      links: %{"Github" => "https://github.com/kbredemeier/#{@app}"}
     ]
   end
 
