@@ -50,7 +50,8 @@ BR2_PACKAGE_WPA_SUPPLICANT=y
 BR2_PACKAGE_WPA_SUPPLICANT_DEBUG_SYSLOG=y
 # BR2_TARGET_ROOTFS_TAR is not set
 BR2_TARGET_GRUB2=y
-BR2_TARGET_GRUB2_BUILTIN_MODULES="boot linux ext2 squash4 fat part_msdos normal biosdisk loadenv echo true test sleep"
+BR2_TARGET_GRUB2_X86_64_EFI=y
+BR2_TARGET_GRUB2_BUILTIN_MODULES="boot linux ext2 squash4 fat part_msdos normal loadenv echo true test sleep"
 BR2_PACKAGE_HOST_DOSFSTOOLS=y
 BR2_NERVES_SYSTEM_NAME="nerves_system_x86_64"
 BR2_NERVES_ADDITIONAL_IMAGE_FILES="${NERVES_DEFCONFIG_DIR}/fwup.conf"
