@@ -21,9 +21,6 @@ cp $BINARIES_DIR/grubenv_b $BINARIES_DIR/grubenv_b_valid
 grub-editenv $BINARIES_DIR/grubenv_b_valid set booted_once=1
 grub-editenv $BINARIES_DIR/grubenv_b_valid set validated=1
 
-# Copy MBR boot code boot.img
-cp $HOST_DIR/usr/lib/grub/i386-pc/boot.img $BINARIES_DIR
-
 # Copy everything that's needed to build firmware images over to the
 # output directory so that it can be bundled with the system image.
 cp $NERVES_DEFCONFIG_DIR/grub.cfg $BINARIES_DIR
