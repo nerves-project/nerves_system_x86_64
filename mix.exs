@@ -81,7 +81,7 @@ defmodule NervesSystemX8664.MixProject do
       "fwup.conf",
       "grub.cfg",
       "LICENSE",
-      "linux-4.13.defconfig",
+      "linux-4.18.defconfig",
       "mix.exs",
       "nerves_defconfig",
       "post-build.sh",
