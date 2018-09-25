@@ -1,27 +1,27 @@
-# UEFI x86_64 System (WIP)
+# UEFI x86_64 System
 
 [![CircleCI](https://circleci.com/gh/kbredemeier/nerves_system_x86_64_uefi/tree/master.svg?style=svg)](https://circleci.com/gh/kbredemeier/nerves_system_x86_64_uefi/tree/master)
-[![Hex version](https://img.shields.io/hexpm/v/nerves_system_x86_64.svg "Hex version")](https://hex.pm/packages/nerves_system_x86_64)
+[![Hex version](https://img.shields.io/hexpm/v/nerves_system_x86_64_uefi.svg "Hex version")](https://hex.pm/packages/nerves_system_x86_64_uefi)
 
-This is the base Nerves System configuration for a generic x86_64 system.
+This Nerves System is forked from the official [x86_64](https://github.com/nerves-project/nerves_system_x86_64)
+system and has been modified to allow UEFI boot from the internal eMMC on the
+[LogicSupply CL210G-10](https://www.logicsupply.com/cl210g-10/).
 
-| Feature              | Description                     |
-| -------------------- | ------------------------------- |
-| CPU                  | Intel                           |
-| Memory               | 512 MB+ DRAM                    |
-| Storage              | Hard disk/SSD/etc. (/dev/sda)   |
-| Linux kernel         | 4.13                            |
-| IEx terminal         | Display - tty0                  |
-| Hardware I/O         | None                            |
-| Ethernet             | Yes                             |
 
-Please contact us about this if you're really interested in it. We don't
-exercise it regularly except as a base for other x86_64 projects.
+| Feature              | Description                          |
+| -------------------- | ------------------------------------ |
+| CPU                  | Intel                                |
+| Memory               | 512 MB+ DRAM                         |
+| Storage              | Hard disk/SSD/eMMC etc. (/dev/sda)   |
+| Linux kernel         | 4.13                                 |
+| IEx terminal         | Display - tty0                       |
+| Hardware I/O         | None                                 |
+| Ethernet             | Yes                                  |
 
 ## Using
 
 The most common way of using this Nerves System is create a project with `mix
-nerves.new` and to export `MIX_TARGET=x86_64`. See the [Getting started
+nerves.new` and to export `MIX_TARGET=x86_64_uefi`. See the [Getting started
 guide](https://hexdocs.pm/nerves/getting-started.html#creating-a-new-nerves-app)
 for more information.
 
