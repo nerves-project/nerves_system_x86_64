@@ -1,5 +1,19 @@
 # Changelog
 
+## v1.5.1
+
+* Updated dependencies
+  * [nerves_system_br v1.5.3](https://github.com/nerves-project/nerves_system_br/releases/tag/v1.5.3)
+
+## v1.5.0
+
+This release updates the Linux kernel from 4.13 to 4.18.9.
+
+* Updated dependencies
+  * [nerves_system_br v1.5.2](https://github.com/nerves-project/nerves_system_br/releases/tag/v1.5.2)
+  * Linux 4.18.9
+  * Erlang 21.0.9
+
 ## v1.4.0
 
 This release contains various updates to provisioning variables and data.
@@ -7,15 +21,15 @@ This release contains various updates to provisioning variables and data.
 **Host requirements**
 
 Building firmware using this system requires `fwup` to be updated on your
-host computer to at least `v1.2.5`. The target minimum version requirement 
+host computer to at least `v1.2.5`. The target minimum version requirement
 has not changed from `0.15.0`.
 
 **Serial numbers**
 
-Device serial numbers are now set using `NERVES_SERIAL_NUMBER` instead of 
+Device serial numbers are now set using `NERVES_SERIAL_NUMBER` instead of
 `SERIAL_NUMBER`. This is to reduce ambiguity on the source of the serial
 by name spacing it along side other Nerves variables. The U-Boot environment
-key has also changed from `serial_number` to `nerves_serial_number`. The 
+key has also changed from `serial_number` to `nerves_serial_number`. The
 erlinit.config has been updated to provide backwards compatibility for setting
 the hostname from the serial number by checking for `nerves_serial_number`
 and falling back to `serial_number`.

@@ -10,7 +10,7 @@ defmodule NervesSystemX8664UEFI.MixProject do
     [
       app: @app,
       version: @version,
-      elixir: "~> 1.4",
+      elixir: "~> 1.6",
       compilers: Mix.compilers() ++ [:nerves_package],
       nerves_package: nerves_package(),
       description: description(),
@@ -47,11 +47,11 @@ defmodule NervesSystemX8664UEFI.MixProject do
 
   defp deps do
     [
-      {:nerves, "~> 1.0", runtime: false},
-      {:nerves_system_br, "1.4.5", runtime: false},
+      {:nerves, "~> 1.3", runtime: false},
+      {:nerves_system_br, "1.5.4", runtime: false},
       {:nerves_toolchain_x86_64_unknown_linux_musl, "1.1.0", runtime: false},
       {:nerves_system_linter, "~> 0.3.0", runtime: false},
-      {:ex_doc, "~> 0.18", only: :dev}
+      {:ex_doc, "~> 0.18", only: [:dev, :test], runtime: false}
     ]
   end
 
@@ -81,7 +81,7 @@ defmodule NervesSystemX8664UEFI.MixProject do
       "fwup.conf",
       "grub.cfg",
       "LICENSE",
-      "linux-4.13.defconfig",
+      "linux-4.18.defconfig",
       "mix.exs",
       "nerves_defconfig",
       "post-build.sh",
