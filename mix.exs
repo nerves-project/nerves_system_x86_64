@@ -26,7 +26,7 @@ defmodule NervesSystemX8664UEFI.MixProject do
   end
 
   defp bootstrap(args) do
-    System.put_env("MIX_TARGET", "x86_64_uefi")
+    set_target()
     Application.start(:nerves_bootstrap)
     Mix.Task.run("loadconfig", args)
   end
@@ -37,6 +37,7 @@ defmodule NervesSystemX8664UEFI.MixProject do
       artifact_sites: [
         {:github_releases, "kbredemeier/#{@app}"}
       ],
+      build_runner_opts: build_runner_opts(),
       platform: Nerves.System.BR,
       platform_config: [
         defconfig: "nerves_defconfig"
@@ -48,7 +49,7 @@ defmodule NervesSystemX8664UEFI.MixProject do
   defp deps do
     [
       {:nerves, "~> 1.3", runtime: false},
-      {:nerves_system_br, "1.5.4", runtime: false},
+      {:nerves_system_br, "1.6.6", runtime: false},
       {:nerves_toolchain_x86_64_unknown_linux_musl, "1.1.0", runtime: false},
       {:nerves_system_linter, "~> 0.3.0", runtime: false},
       {:ex_doc, "~> 0.18", only: [:dev, :test], runtime: false}
@@ -89,5 +90,21 @@ defmodule NervesSystemX8664UEFI.MixProject do
       "README.md",
       "VERSION"
     ]
+  end
+
+  defp build_runner_opts() do
+    if primary_site = System.get_env("BR2_PRIMARY_SITE") do
+      [make_args: ["BR2_PRIMARY_SITE=#{primary_site}"]]
+    else
+      []
+    end
+  end
+
+  defp set_target() do
+    if function_exported?(Mix, :target, 1) do
+      apply(Mix, :target, [:target])
+    else
+      System.put_env("MIX_TARGET", "target")
+    end
   end
 end
