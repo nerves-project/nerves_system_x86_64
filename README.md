@@ -10,7 +10,7 @@ This is the base Nerves System configuration for a generic x86_64 system.
 | CPU                  | Intel                           |
 | Memory               | 512 MB+ DRAM                    |
 | Storage              | Hard disk/SSD/etc. (/dev/sda)   |
-| Linux kernel         | 4.13                            |
+| Linux kernel         | 4.19                            |
 | IEx terminal         | Display - tty0                  |
 | Hardware I/O         | None                            |
 | Ethernet             | Yes                             |
@@ -91,7 +91,7 @@ the application partition so reformatting the application partition will not
 lose the serial number or any other data stored in this block.
 
 Additional key value pairs can be provisioned by overriding the default provisioning.conf
-file location by setting the environment variable 
+file location by setting the environment variable
 `NERVES_PROVISIONING=/path/to/provisioning.conf`. The default provisioning.conf
 will set the `nerves_serial_number`, if you override the location to this file,
 you will be responsible for setting this yourself.
