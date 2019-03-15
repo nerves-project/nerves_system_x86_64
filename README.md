@@ -7,16 +7,15 @@ This Nerves System is forked from the official [x86_64](https://github.com/nerve
 system and has been modified to allow UEFI boot from the internal eMMC on the
 [LogicSupply CL210G-10](https://www.logicsupply.com/cl210g-10/).
 
-
-| Feature              | Description                          |
-| -------------------- | ------------------------------------ |
-| CPU                  | Intel                                |
-| Memory               | 512 MB+ DRAM                         |
-| Storage              | Hard disk/SSD/eMMC etc. (/dev/sda)   |
-| Linux kernel         | 4.13                                 |
-| IEx terminal         | Display - tty0                       |
-| Hardware I/O         | None                                 |
-| Ethernet             | Yes                                  |
+| Feature              | Description                     |
+| -------------------- | ------------------------------- |
+| CPU                  | Intel                           |
+| Memory               | 512 MB+ DRAM                    |
+| Storage              | Hard disk/SSD/etc. (/dev/sda)   |
+| Linux kernel         | 4.19                            |
+| IEx terminal         | Display - tty0                  |
+| Hardware I/O         | None                            |
+| Ethernet             | Yes                             |
 
 ## Using
 
@@ -91,7 +90,7 @@ the application partition so reformatting the application partition will not
 lose the serial number or any other data stored in this block.
 
 Additional key value pairs can be provisioned by overriding the default provisioning.conf
-file location by setting the environment variable 
+file location by setting the environment variable
 `NERVES_PROVISIONING=/path/to/provisioning.conf`. The default provisioning.conf
 will set the `nerves_serial_number`, if you override the location to this file,
 you will be responsible for setting this yourself.
