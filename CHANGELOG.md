@@ -1,5 +1,18 @@
 # Changelog
 
+## v1.7.0
+
+ * Updated dependencies
+  * [nerves_system_br v1.7.0](https://github.com/nerves-project/nerves_system_br/releases/tag/v1.7.0)
+  * Erlang 21.2.7
+  * Linux 4.19.29
+
+## v1.6.3
+
+ * Updated dependencies
+  * [nerves_system_br v1.6.8](https://github.com/nerves-project/nerves_system_br/releases/tag/v1.6.8)
+  * Erlang 21.2.6
+
 ## v1.6.2
 
 * Updated dependencies
