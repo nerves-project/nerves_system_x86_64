@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.7.1
+
+ * Replaces `wget` with `curl`
+
 ## v1.7.0
 
  * Updated dependencies
