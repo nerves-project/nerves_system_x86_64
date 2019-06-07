@@ -48,9 +48,9 @@ defmodule NervesSystemX8664.MixProject do
 
   defp deps do
     [
-      {:nerves, "~> 1.3", runtime: false},
-      {:nerves_system_br, "1.7.2", runtime: false},
-      {:nerves_toolchain_x86_64_unknown_linux_musl, "1.1.0", runtime: false},
+      {:nerves, "~> 1.4", runtime: false},
+      {:nerves_system_br, "1.8.0", runtime: false},
+      {:nerves_toolchain_x86_64_unknown_linux_musl, "1.2.0", runtime: false},
       {:nerves_system_linter, "~> 0.3.0", runtime: false},
       {:ex_doc, "~> 0.18", only: [:dev, :test], runtime: false}
     ]
