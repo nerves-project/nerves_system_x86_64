@@ -48,8 +48,8 @@ defmodule NervesSystemX8664.MixProject do
 
   defp deps do
     [
-      {:nerves, "~> 1.4", runtime: false},
-      {:nerves_system_br, "1.8.2", runtime: false},
+      {:nerves, "~> 1.5.0", runtime: false},
+      {:nerves_system_br, "1.8.4", runtime: false},
       {:nerves_toolchain_x86_64_unknown_linux_musl, "1.2.0", runtime: false},
       {:nerves_system_linter, "~> 0.3.0", runtime: false},
       {:ex_doc, "~> 0.18", only: [:dev, :test], runtime: false}
@@ -66,7 +66,7 @@ defmodule NervesSystemX8664.MixProject do
     [
       files: package_files(),
       licenses: ["Apache 2.0"],
-      links: %{"Github" => "https://github.com/nerves-project/#{@app}"}
+      links: %{"GitHub" => "https://github.com/nerves-project/#{@app}"}
     ]
   end
 
