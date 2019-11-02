@@ -3,23 +3,21 @@
 set -e
 
 # Create the Grub environment blocks
-grub-editenv $BINARIES_DIR/grubenv_a create
-grub-editenv $BINARIES_DIR/grubenv_a set boot=0
-grub-editenv $BINARIES_DIR/grubenv_a set validated=0
-grub-editenv $BINARIES_DIR/grubenv_a set booted_once=0
+grub-editenv $BINARIES_DIR/grubenv_a_valid_0 create
+grub-editenv $BINARIES_DIR/grubenv_a_valid_0 set nerves_fw_active=a
+grub-editenv $BINARIES_DIR/grubenv_a_valid_0 set nerves_fw_validated=0
+grub-editenv $BINARIES_DIR/grubenv_a_valid_0 set nerves_fw_booted=0
 
-grub-editenv $BINARIES_DIR/grubenv_b create
-grub-editenv $BINARIES_DIR/grubenv_b set boot=1
-grub-editenv $BINARIES_DIR/grubenv_b set validated=0
-grub-editenv $BINARIES_DIR/grubenv_b set booted_once=0
+grub-editenv $BINARIES_DIR/grubenv_b_valid_0 create
+grub-editenv $BINARIES_DIR/grubenv_b_valid_0 set nerves_fw_active=b
+grub-editenv $BINARIES_DIR/grubenv_b_valid_0 set nerves_fw_validated=0
+grub-editenv $BINARIES_DIR/grubenv_b_valid_0 set nerves_fw_booted=0
 
-cp $BINARIES_DIR/grubenv_a $BINARIES_DIR/grubenv_a_valid
-grub-editenv $BINARIES_DIR/grubenv_a_valid set booted_once=1
-grub-editenv $BINARIES_DIR/grubenv_a_valid set validated=1
+cp $BINARIES_DIR/grubenv_a_valid_0 $BINARIES_DIR/grubenv_a_valid_1
+grub-editenv $BINARIES_DIR/grubenv_a_valid_1 set nerves_fw_validated=1
 
-cp $BINARIES_DIR/grubenv_b $BINARIES_DIR/grubenv_b_valid
-grub-editenv $BINARIES_DIR/grubenv_b_valid set booted_once=1
-grub-editenv $BINARIES_DIR/grubenv_b_valid set validated=1
+cp $BINARIES_DIR/grubenv_b_valid_0 $BINARIES_DIR/grubenv_b_valid_1
+grub-editenv $BINARIES_DIR/grubenv_b_valid_1 set nerves_fw_validated=1
 
 # Copy MBR boot code boot.img
 cp $HOST_DIR/usr/lib/grub/i386-pc/boot.img $BINARIES_DIR
@@ -37,6 +35,9 @@ rm -fr $TARGET_DIR/boot/grub/*
 # active firmware.
 mkdir -p $TARGET_DIR/usr/share/fwup
 NERVES_SYSTEM=$BASE_DIR $HOST_DIR/usr/bin/fwup -c -f $NERVES_DEFCONFIG_DIR/fwup-revert.conf -o $TARGET_DIR/usr/share/fwup/revert.fw
+
+# Create the mark_valid script for manually marking firmware valid
+NERVES_SYSTEM=$BASE_DIR $HOST_DIR/usr/bin/fwup -c -f $NERVES_DEFCONFIG_DIR/fwup-mark-valid.conf -o $TARGET_DIR/usr/share/fwup/mark_valid.fw
 
 # Copy the fwup includes to the images dir
 cp -rf $NERVES_DEFCONFIG_DIR/fwup_include $BINARIES_DIR
