@@ -1,5 +1,24 @@
 # Changelog
 
+## v1.13.1
+
+The main change in this release is to bump the Linux kernel to 5.4. This follows
+similar updates to Linux 5.4 across the official Nerves systems. Please review
+the `linux-5.4.defconfig` for changes.
+
+* Updated dependencies
+  * [nerves_system_br: bump to v1.13.4](https://github.com/nerves-project/nerves_system_br/releases/tag/v1.13.4)
+  * [Erlang/OTP 23.1.4](https://erlang.org/download/OTP-23.1.4.README)
+  * [boardid 1.10.0](https://github.com/nerves-project/boardid/releases/tag/v1.10.0)
+
+* Improvements
+  * Enabled reproducible builds in Buildroot to remove some timestamp and build
+    path differences in firmware images. This helps delta firmware updates.
+
+* Fixes
+  * Running images using the `run_qemu.sh` script works again. This is unsupported,
+    but may be useful as a start for running images via qemu.
+
 ## v1.13.0
 
 This release updates to [Buildroot
