@@ -23,7 +23,7 @@ defmodule NervesSystemX8664.MixProject do
   end
 
   def application do
-    []
+    [extra_applications: [:eex]]
   end
 
   defp bootstrap(args) do
