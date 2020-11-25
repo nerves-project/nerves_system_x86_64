@@ -16,6 +16,11 @@ help() {
     echo
     echo "Usage:"
     echo "  run-qemu.sh [Path to .img file]"
+    echo
+    echo "Run 'mix firmware.image' to create the starter image. Since qemu isn't"
+    echo "supported by Nerves, we don't have instructions for how to make this a"
+    echo "productive development environment. You should be able to see this"
+    echo "boot, though."
     exit 1
 }
 [ -n "$IMAGE" ] || IMAGE="$DEFAULT_IMAGE"
@@ -24,7 +29,7 @@ help() {
 
 echo "Starting QEMU..."
 qemu-system-x86_64 \
-    -m 1G \
-    -drive file="$IMAGE",format=raw \
-    -device e1000,netdev=user.0 \
-    -netdev user,id=user.0,hostfwd=tcp::8989-:8989
+    -drive file="$IMAGE",if=virtio,format=raw \
+    -net nic,model=virtio \
+    -net user,hostfwd=tcp::10022-:22 \
+    -serial stdio
