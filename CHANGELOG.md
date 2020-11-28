@@ -1,5 +1,10 @@
 # Changelog
 
+## v1.13.2
+
+* Fixes
+  * Adds `libnl` back to support VintageNet
+
 ## v1.13.1
 
 The main change in this release is to bump the Linux kernel to 5.4. This follows
