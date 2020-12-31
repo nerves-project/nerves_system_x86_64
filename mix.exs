@@ -3,6 +3,7 @@ defmodule NervesSystemX8664.MixProject do
 
   @github_organization "nerves-project"
   @app :nerves_system_x86_64
+  @source_url "https://github.com/#{@github_organization}/#{@app}"
   @version Path.join(__DIR__, "VERSION")
            |> File.read!()
            |> String.trim()
@@ -18,7 +19,12 @@ defmodule NervesSystemX8664.MixProject do
       package: package(),
       deps: deps(),
       aliases: [loadconfig: [&bootstrap/1]],
-      docs: [extras: ["README.md"], main: "readme"]
+      docs: docs(),
+      preferred_cli_env: %{
+        docs: :docs,
+        "hex.build": :docs,
+        "hex.publish": :docs
+      }
     ]
   end
 
@@ -53,7 +59,7 @@ defmodule NervesSystemX8664.MixProject do
       {:nerves_system_br, "1.13.5", runtime: false},
       {:nerves_toolchain_x86_64_unknown_linux_musl, "~> 1.3.0", runtime: false},
       {:nerves_system_linter, "~> 0.4", only: [:dev, :test], runtime: false},
-      {:ex_doc, "~> 0.18", only: [:dev, :test], runtime: false}
+      {:ex_doc, "~> 0.22", only: :docs, runtime: false}
     ]
   end
 
@@ -63,11 +69,21 @@ defmodule NervesSystemX8664.MixProject do
     """
   end
 
+  defp docs do
+    [
+      extras: ["README.md", "CHANGELOG.md"],
+      main: "readme",
+      source_ref: "v#{@version}",
+      source_url: @source_url,
+      skip_undefined_reference_warnings_on: ["CHANGELOG.md"]
+    ]
+  end
+
   defp package do
     [
       files: package_files(),
       licenses: ["Apache 2.0"],
-      links: %{"GitHub" => "https://github.com/#{@github_organization}/#{@app}"}
+      links: %{"GitHub" => @source_url}
     ]
   end
 
@@ -93,10 +109,9 @@ defmodule NervesSystemX8664.MixProject do
   end
 
   defp build_runner_opts() do
-    if primary_site = System.get_env("BR2_PRIMARY_SITE") do
-      [make_args: ["BR2_PRIMARY_SITE=#{primary_site}"]]
-    else
-      []
+    case System.get_env("BR2_PRIMARY_SITE") do
+      nil -> []
+      primary_site -> [make_args: ["BR2_PRIMARY_SITE=#{primary_site}"]]
     end
   end
 
