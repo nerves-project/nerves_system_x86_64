@@ -12,6 +12,20 @@ follows:
    releases, and Linux kernel updates. They're also made to fix bugs and add
    features to the build infrastructure.
 
+## v1.18.2
+
+This is a Buildroot and Erlang bug fix release. It should be a low risk upgrade
+from the previous release.
+
+* Updated dependencies
+  * [nerves_system_br v1.18.4](https://github.com/nerves-project/nerves_system_br/releases/tag/v1.18.4)
+
+* Changes
+  * Specify CPU-specific flags when compiling NIFs and ports. This fixes an
+    issue where some optimizations could not be enabled in NIFs even though it
+    should be possible to have them. E.g., ARM NEON support for CPUs that have
+    it.
+
 ## v1.18.1
 
 * Updated dependencies
