@@ -56,7 +56,7 @@ defmodule NervesSystemX8664.MixProject do
         {"TARGET_ARCH", "x86_64"},
         {"TARGET_OS", "linux"},
         {"TARGET_ABI", "musl"},
-        {"TARGET_GCC_FLAGS", "-m64 -fstack-protector-strong -march=nocona -fPIE -pie -Wl,-z,now -Wl,-z,relro"}
+        {"TARGET_GCC_FLAGS", "-m64 -fstack-protector-strong -march=x86-64 -fPIE -pie -Wl,-z,now -Wl,-z,relro"}
       ],
       checksum: package_files()
     ]
