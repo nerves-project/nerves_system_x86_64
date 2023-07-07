@@ -12,6 +12,18 @@ follows:
    releases, and Linux kernel updates. They're also made to fix bugs and add
    features to the build infrastructure.
 
+## v1.23.0
+
+This is a major update that brings in Erlang/OTP 26 and Buildroot 2023.02.2.
+
+* New features
+  * CA certificates are included for OTP 26.
+
+* Updated dependencies
+  * [nerves_system_br v1.23.1](https://github.com/nerves-project/nerves_system_br/releases/tag/v1.23.1)
+  * [Buildroot 2023.02.2](https://lore.kernel.org/buildroot/87wn03ifbl.fsf@48ers.dk/T/)
+  * [Erlang/OTP 26.0.2](https://erlang.org/download/OTP-26.0.2.README)
+
 ## v1.22.2
 
 This is a bug and security fix update. It should be a low risk upgrade.
