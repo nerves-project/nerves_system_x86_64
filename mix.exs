@@ -103,7 +103,7 @@ defmodule NervesSystemX8664.MixProject do
       "priv",
       "rootfs_overlay",
       "CHANGELOG.md",
-      "fwup-revert.conf",
+      "fwup-ops.conf",
       "fwup.conf",
       "grub.cfg",
       "LICENSE",
