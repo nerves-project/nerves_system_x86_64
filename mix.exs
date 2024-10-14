@@ -100,8 +100,6 @@ defmodule NervesSystemX8664.MixProject do
   defp package_files do
     [
       "fwup_include",
-      "lib",
-      "priv",
       "rootfs_overlay",
       "CHANGELOG.md",
       "fwup-revert.conf",
