@@ -13,7 +13,7 @@ probably will require some work.
 | Memory               | 512 MB+ DRAM                    |
 | Storage              | Hard disk/SSD/etc. (/dev/sda)   |
 | Linux kernel         | 6.6                             |
-| IEx terminal         | Display - tty0                  |
+| IEx terminal         | Virtual serial - ttyS0          |
 | Hardware I/O         | None                            |
 | Ethernet             | Yes                             |
 
