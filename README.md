@@ -10,7 +10,7 @@ This is the base Nerves System configuration for a generic x86_64 system.
 | CPU                  | Intel                           |
 | Memory               | 512 MB+ DRAM                    |
 | Storage              | Hard disk/SSD/etc. (/dev/sda)   |
-| Linux kernel         | 5.4                             |
+| Linux kernel         | 6.6                             |
 | IEx terminal         | Display - tty0                  |
 | Hardware I/O         | None                            |
 | Ethernet             | Yes                             |
