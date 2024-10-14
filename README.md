@@ -3,7 +3,9 @@
 [![CircleCI](https://circleci.com/gh/nerves-project/nerves_system_x86_64/tree/master.svg?style=svg)](https://circleci.com/gh/nerves-project/nerves_system_x86_64/tree/master)
 [![Hex version](https://img.shields.io/hexpm/v/nerves_system_x86_64.svg "Hex version")](https://hex.pm/packages/nerves_system_x86_64)
 
-This is the base Nerves System configuration for a generic x86_64 system.
+This is the base Nerves System configuration for a generic x86_64 system that
+can be run with Qemu. It can be used as a base for real x86_64 systems, but it
+probably will require some work.
 
 | Feature              | Description                     |
 | -------------------- | ------------------------------- |
@@ -15,9 +17,6 @@ This is the base Nerves System configuration for a generic x86_64 system.
 | Hardware I/O         | None                            |
 | Ethernet             | Yes                             |
 
-Please contact us about this if you're really interested in it. We don't
-exercise it regularly except as a base for other x86_64 projects.
-
 ## Using
 
 The most common way of using this Nerves System is create a project with `mix
@@ -28,6 +27,53 @@ for more information.
 If you need custom modifications to this system for your device, clone this
 repository and update as described in [Making custom
 systems](https://hexdocs.pm/nerves/systems.html#customizing-your-own-nerves-system)
+
+## Running in qemu
+
+It's possible to run Nerves projects built with this system in Qemu with some
+work. If you create a Nerves projects with the `nerves_system_x86_64`
+dependency, here are the steps:
+
+Create firmware like normal:
+
+```sh
+export MIX_TARGET=x86_64
+mix deps.get
+mix firmware
+```
+
+Create the disk image (virtual MicroSD/SD/eMMC):
+
+```sh
+qemu-img create -f raw disk.img 1G
+```
+
+Use `fwup` to write the image for the first time:
+
+```sh
+# Substitute the .fw file based on your project
+fwup -d disk.img _build/x86_64_dev/nerves/images/circuits_quickstart.fw
+```
+
+Run qemu:
+
+```sh
+qemu-system-x86_64 -drive file=disk.img,if=virtio,format=raw -net nic,model=virtio -net user,hostfwd=tcp::10022-:22 -nographic -serial mon:stdio -m 1024
+```
+
+You should eventually get an IEx prompt. The first boot takes longer since the
+application data partition will be formatted. Run `poweroff` at the IEx prompt
+to exit out of Qemu or if you're having trouble, run `killall
+qemu-system-x86_64` in another shell window.
+
+You can ssh into the system by using port 10022. Try `ssh -p 10022 localhost`.
+It's possible to run an "over-the-air" firmware update also using ssh by running
+the following:
+
+```sh
+mix firmware.gen.script # create the upload.sh script
+SSH_OPTIONS="-p 10022" ./upload.sh localhost
+```
 
 ## Root disk naming
 
