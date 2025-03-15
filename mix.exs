@@ -109,7 +109,7 @@ defmodule NervesSystemX8664.MixProject do
       "fwup-ops.conf",
       "fwup.conf",
       "grub.cfg",
-      "LICENSE/*",
+      "LICENSES/*",
       "linux-6.6.defconfig",
       "mix.exs",
       "nerves_defconfig",
