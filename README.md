@@ -1,7 +1,8 @@
 # Generic x86_64 System
 
-[![CircleCI](https://circleci.com/gh/nerves-project/nerves_system_x86_64/tree/master.svg?style=svg)](https://circleci.com/gh/nerves-project/nerves_system_x86_64/tree/master)
 [![Hex version](https://img.shields.io/hexpm/v/nerves_system_x86_64.svg "Hex version")](https://hex.pm/packages/nerves_system_x86_64)
+[![CI](https://github.com/nerves-project/nerves_system_x86_64/actions/workflows/ci.yml/badge.svg)](https://github.com/nerves-project/nerves_system_x86_64/actions/workflows/ci.yml)
+[![REUSE status](https://api.reuse.software/badge/github.com/nerves-project/nerves_system_x86_64)](https://api.reuse.software/info/github.com/nerves-project/nerves_system_x86_64)
 
 This is the base Nerves System configuration for a generic x86_64 system that
 can be run with Qemu. It can be used as a base for real x86_64 systems, but it
