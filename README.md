@@ -13,7 +13,7 @@ probably will require some work.
 | CPU                  | Intel                           |
 | Memory               | 512 MB+ DRAM                    |
 | Storage              | Hard disk/SSD/etc. (/dev/sda)   |
-| Linux kernel         | 6.6                             |
+| Linux kernel         | 6.12                            |
 | IEx terminal         | Virtual serial - ttyS0          |
 | Hardware I/O         | None                            |
 | Ethernet             | Yes                             |
