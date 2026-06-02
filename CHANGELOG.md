@@ -655,7 +655,7 @@ This release updates to [Buildroot
 
 * New features
   * Added support for updating the root filesystem using firmware patches.
-    See the [firmware patch docs](https://hexdocs.pm/nerves/experimental-features.html#content) for more information.
+    See the [firmware patch docs](https://nerves.hexdocs.pm/experimental-features.html#content) for more information.
 
 ## v1.12.2
 
@@ -1024,7 +1024,7 @@ using CI, make sure to update your publish scripts.
   * Automount the boot partition readonly at `/boot`
   * Support for reverting firmware.
 
-    See [Reverting Firmware](https://hexdocs.pm/nerves_runtime/readme.html#reverting-firmware) for more info on reverting firmware.
+    See [Reverting Firmware](https://nerves-runtime.hexdocs.pm/readme.html#reverting-firmware) for more info on reverting firmware.
 
     See [fwup-revert.conf](https://github.com/nerves-project/nerves_system_rpi/blob/master/fwup-revert.conf) for more information on how fwup handles reverting.
 
