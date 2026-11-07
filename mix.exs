@@ -58,7 +58,7 @@ defmodule NervesSystemX8664.MixProject do
         {"TARGET_ABI", "musl"},
         {"TARGET_GCC_FLAGS", "-m64 -fstack-protector-strong -march=x86-64 -fPIE -pie -Wl,-z,now -Wl,-z,relro"}
       ],
-      checksum: package_files()
+      checksum: source_finger_print_files()
     ]
   end
 
@@ -100,24 +100,30 @@ defmodule NervesSystemX8664.MixProject do
     ]
   end
 
-  defp package_files do
+  defp source_finger_print_files do
     [
       "fwup_include",
       "rootfs_overlay",
-      "CHANGELOG.md",
       "fwup-ops.conf",
       "fwup.conf",
       "grub.cfg",
-      "LICENSES/*",
       "linux-6.18.defconfig",
       "mix.exs",
       "nerves_defconfig",
       "post-build.sh",
-      "post-createfs.sh",
+      "post-createfs.sh"
+    ]
+  end
+
+  defp package_files do
+    [
+      "CHANGELOG.md",
+      "checksum.exs",
+      "LICENSES/*",
       "README.md",
       "REUSE.toml",
       "VERSION"
-    ]
+    ] ++ source_finger_print_files()
   end
 
   defp build_runner_opts() do
