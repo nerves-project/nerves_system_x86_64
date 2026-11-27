@@ -65,6 +65,7 @@ defmodule NervesSystemX8664.MixProject do
       {:nerves_system_br, "1.35.5", runtime: false},
       {:nerves_toolchain_x86_64_nerves_linux_musl, "~> 15.3.0", runtime: false},
       {:nerves_system_linter, "~> 0.4", only: [:dev, :test], runtime: false},
+      {:igniter, "~> 0.6", optional: true, runtime: false},
       {:ex_doc, "~> 0.22", only: :docs, runtime: false}
     ]
   end
@@ -117,6 +118,7 @@ defmodule NervesSystemX8664.MixProject do
     [
       "CHANGELOG.md",
       "checksum.exs",
+      "lib",
       "LICENSES/*",
       "README.md",
       "REUSE.toml",

@@ -29,6 +29,20 @@ If you need custom modifications to this system for your device, clone this
 repository and update as described in [Making custom
 systems](https://nerves.hexdocs.pm/systems.html#customizing-your-own-nerves-system)
 
+### Igniter
+
+If your project uses [Igniter](https://igniter.hexdocs.pm), this system can be
+added to an existing Nerves project by running:
+
+```sh
+mix igniter.install nerves_system_x86_64
+```
+
+This adds `nerves_system_x86_64` to the `mix.exs` dependencies for the `x86_64`
+target and adds `:x86_64` to `@all_targets` if the project has it. Existing
+targets are kept. The installer doesn't have any options. It requires Nerves 2.0
+or later.
+
 ## Running in qemu
 
 It's possible to run Nerves projects built with this system in Qemu with some
